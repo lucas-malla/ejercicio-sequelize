@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Agregar Película</h1>
+    <br>
+    <section class="formulario">
+        <form action="/movies/altaPeli" method="POST">           
+           
+            <label for="title">Title </label>
+            <p><input type="text" name="title" id=""></p>
+            <% if(locals.errors && locals.errors.title){ %>
+                <span id="errorMapped"> <%= errors.title.msg  %> </span>
+              <% } %> 
+              <br/>
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id=""></p>
+            <% if(locals.errors && locals.errors.rating){ %>
+                <span id="errorMapped"> <%= errors.rating.msg  %> </span>
+              <% } %> 
+            <br/>
+            <label for="awards">Awards </label>
+            <p><input type="text" name="awards" id=""></p>
+            <% if(locals.errors && locals.errors.awards){ %>
+                <span id="errorMapped"> <%= errors.awards.msg  %> </span>
+              <% } %> 
+            <br/>  
+            <label for="release_date">Release date </label>
+            <p><input type="datetime-local" name="release_date" id="" value:"2022-07-01 12:00:00" ></p>
+            <% if(locals.errors && locals.errors.release_date){ %>
+                <span id="errorMapped"> <%= errors.release_date.msg  %> </span>
+              <% } %> 
+            <br/>
+            <label for="length">Length </label>              
+            <p><input type="number" name="length" id=""></p>
+            <% if(locals.errors && locals.errors.length){ %>
+                <span id="errorMapped"> <%= errors.length.msg  %> </span>
+              <% } %> 
+            <br/>
+            <br>
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+        </form>
+        <br/>
+     <div class= "closeMain" >
+      <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+
+        <p><a href="/" id="vuelvo">Volver a Pagina Principal</a></p>
+     </div>
+    </section>
+    
+</body>
+
+</html>
